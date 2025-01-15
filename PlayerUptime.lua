@@ -40,9 +40,9 @@ while _G.playeruptime do
     end
 
     local minutesToAdd = countsec / 60
-
+    local playert = game.Players.LocalPlayer.Character.Name
     local embed = {
-        ["title"] = game.Players.LocalPlayer.Character.Name,
+        ["title"] = "||"..playert.."||",
         ["color"] = color,
         ["fields"] = {
             { ["name"] = "🟢 Online", ["value"] = string.format("%.2f minute", count) },
