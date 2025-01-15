@@ -10,7 +10,7 @@ end)
 --Whitelist attemp 2#
 local function secondwhitelist()
     print("Whitelist Checking Second...")
-local UserId = {2409247051, 2397033664, 3417044281}
+local UserId = {2409247051}
 local ShirtId = {}
 local player = game.Players.LocalPlayer
 local isUserIdWhitelisted = false
