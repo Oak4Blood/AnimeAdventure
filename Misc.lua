@@ -7,47 +7,6 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 
---Whitelist attemp 2#
-local function secondwhitelist()
-    print("Whitelist Checking Second...")
-local UserId = {2409247051}
-local ShirtId = {}
-local player = game.Players.LocalPlayer
-local isUserIdWhitelisted = false
-local isShirtIdWhitelisted = false
-local tohec = nil
-
-for _, id in ipairs(UserId) do
-    if player.UserId == id then
-        isUserIdWhitelisted = true
-    end
-end
-
-if player.Character then
-    for _, v in ipairs(player.Character:GetChildren()) do
-        if v:IsA("Shirt") then
-            local shirtId1 = string.match(v.ShirtTemplate, "%d+$")
-            if shirtId1 then
-                tohec = tonumber(shirtId1)
-            end
-        end
-    end
-end
-
-for _, whitelistedShirtId in ipairs(ShirtId) do
-    if tohec == whitelistedShirtId then
-        isShirtIdWhitelisted = true
-    end
-end
-
-wait(0.1)
-if isUserIdWhitelisted or isShirtIdWhitelisted then
-    print(player.Name .. " ไวสลิลส์ถูกต้อง")
-else
-    player:Kick("คุณไม่อยู่ใน whitelist หรือไม่มีเสื้อที่อนุญาต")
-end
-end
-
 --Function to hide message
 local function message()
     wait(2)
@@ -75,8 +34,6 @@ end
 -- Call Function
 showgem()
 message()
-secondwhitelist()
-
 -- Auto Vote Start
 local earth1 = workspace
 for _, v in pairs(earth1:GetChildren()) do
