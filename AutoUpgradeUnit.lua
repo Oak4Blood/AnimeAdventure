@@ -14,7 +14,7 @@ while _G.autoupgrade do
     wait(2)
 
     local wavenum = workspace._wave_num.Value
-    if wavenum >= 8 then
+    if wavenum >= 5 then
         local tofind = workspace:WaitForChild("_UNITS")
         for _, v in pairs(tofind:GetDescendants()) do
             if v.Name == "fakehead" and v.Parent and v.Parent:IsA("Model") then
@@ -40,7 +40,7 @@ while _G.autoupgrade do
             end
         end
 
-        if wavenum == 40 then
+        if wavenum == 80 then
             _G.autoupgrade = false
         end
     end
