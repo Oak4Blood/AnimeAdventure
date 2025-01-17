@@ -88,27 +88,27 @@ end)
 end
 end
 end
+
+-- Auto Vote Start
+local function vstart()
+    local earth1 = workspace
+for _, v in pairs(earth1:GetChildren()) do
+    if v.Name == "_waves_started" then
+        local vstart = game:GetService("Players").LocalPlayer.PlayerGui.VoteStart
+repeat
+    wait()
+until vstart.Enabled == true
+wait(0.5)
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
+    end
+end
+end
+
 -- Call Function
 showgem()
 message()
 toggleui()
-
--- Auto Vote Start
-local earth1 = workspace
-for _, v in pairs(earth1:GetChildren()) do
-    if v.Name == "_waves_started" then
-        wait(3)
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
-        local votestart = game:GetService("Players").LocalPlayer.PlayerGui.VoteStart.Enabled
-        print("Auto Vote Executed")
-        
-        repeat 
-            wait() 
-        until votestart == false
-        
-        print("Vote Start is now disabled")
-    end
-end
+vstart()
 
 for _, v in pairs(workspace:GetChildren()) do
     if v.Name == "weather" then
