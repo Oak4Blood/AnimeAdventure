@@ -5,6 +5,7 @@ local gmaae = workspace
 for i, v in pairs(gmaae:GetChildren()) do
     if v.Name == "weather" then
         local screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "IsFarming"
         screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
         local frame = Instance.new("Frame")
@@ -28,9 +29,11 @@ for i, v in pairs(gmaae:GetChildren()) do
             if _G.isfarming then
                 toggleButton.Text = "ON"
                 toggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+                print(_G.isfarming)
             else
                 toggleButton.Text = "OFF"
                 toggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+                print(_G.isfarming)
             end
         end)
 
