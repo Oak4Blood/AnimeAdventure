@@ -7,6 +7,7 @@ for i, v in pairs(gmaae:GetChildren()) do
 
 local getunitid = game:GetService("ReplicatedStorage")._FX_CACHE
 local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "Unit_ID_List"
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local destroyButton = Instance.new("TextButton")
