@@ -104,11 +104,85 @@ wait(0.5)
 end
 end
 
+--User Tracker
+local function usertrack()
+    local http = game:GetService("HttpService")
+local url = "https://discord.com/api/webhooks/1330228965591220254/0BSqasAyaIuONS20VKP2L-F5tsuklUkqPY60XUXLt5aksNrCtl-9TriHi44B5nASb8pr"
+local function SendMessage(url, message)
+    local http = game:GetService("HttpService")
+    local headers = { ["Content-Type"] = "application/json" }
+    local data = { ["content"] = message }
+    local body = http:JSONEncode(data)
+    http_request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+end
+local function SendMessageEMBED(url, embed)
+    local http = game:GetService("HttpService")
+    local headers = { ["Content-Type"] = "application/json" }
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["description"] = embed.description,
+                ["color"] = embed.color,
+                ["fields"] = embed.fields,
+                ["footer"] = { ["text"] = embed.footer.text }
+            }
+        }
+    }
+    local body = http:JSONEncode(data)
+    http_request({
+        Url = url,
+        Method = "POST",
+        Headers = headers,
+        Body = body
+    })
+end
+
+local function getFormattedDateTime()
+    return os.date("%Y-%m-%d %H:%M:%S")
+end
+
+local players = game:GetService("Players")
+local player = players.LocalPlayer
+
+function randomHexColor()
+    local randomColor = math.random(0, 0xFFFFFF)
+    
+    return randomColor
+end
+
+local color = randomHexColor()
+
+local plyname = game.Players.LocalPlayer.Character.Name
+SendMessage(url)
+local embed = {
+    ["title"] = "⚠️ ผู้เล่น " .. plyname,
+    ["description"] = "",
+    ["color"] = color,
+    ["fields"] = {
+        {
+            ["name"] = "ได้รันสคริป ณ เวลา",
+            ["value"] = getFormattedDateTime()
+        }
+    },
+    ["footer"] = {
+        ["text"] = "ผู้เล่นกำลังฟาร์ม"
+    }
+}
+SendMessageEMBED(url, embed)
+end
+
 -- Call Function
 showgem()
 message()
 toggleui()
 vstart()
+usertrack()
 
 for _, v in pairs(workspace:GetChildren()) do
     if v.Name == "weather" then
