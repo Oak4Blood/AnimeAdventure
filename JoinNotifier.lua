@@ -1,4 +1,4 @@
-print("Join Notifier Executed")
+print("Join Notifier Executed waiting for response")
 wait(2)
 local function SendMessage(url, message)
     local http = game:GetService("HttpService")
