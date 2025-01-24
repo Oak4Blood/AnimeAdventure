@@ -35,7 +35,7 @@ while _G.dropget do
     local function SendMessageEMBED(url, embed)
         local headers = { ["Content-Type"] = "application/json" }
         local data = {
-            ["username"] = "Drop Seaweed",
+            ["username"] = "🏹 Drop Hunter",
             ["embeds"] = {
                 {
                     ["title"] = embed.title,
