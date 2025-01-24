@@ -1,7 +1,7 @@
 print("Player uptime executed")
 wait(4)
 local countsec = _G.uptimedelay
-
+defaultuser = "❓ Where Am I?"
 count = 0
 
 local http = game:GetService("HttpService")
@@ -10,6 +10,7 @@ local url = _G.playeruptimewebhook
 local function checkwhereami()
     local workspace = game:GetService("Workspace")
     if workspace:FindFirstChild("_waves_started") and workspace._wave_num then
+        defaultuser = "🌊 Wave"
         wavenum = workspace._wave_num.Value
     else
         wavenum = nil
@@ -57,8 +58,8 @@ while _G.playeruptime do
         ["fields"] = {
             { ["name"] = "🟢 Online", ["value"] = string.format("%.2f minute", count) },
             { 
-                ["name"] = "🌊 Wave", 
-                ["value"] = wavenum and tostring(wavenum) or "Player in lobby"
+                ["name"] = defaultuser, 
+                ["value"] = wavenum and tostring(wavenum) or "Oh! in lobby"
             },
         },
         ["footer"] = { ["text"] = getFormattedDateTime() }
