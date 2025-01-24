@@ -26,6 +26,7 @@ po.ChildAdded:Connect(function(a)
             local http = game:GetService("HttpService")
             local headers = { ["Content-Type"] = "application/json" }
             local data = {
+                ["username"] = "aiweed",
                 ["embeds"] = {
                     {
                         ["title"] = embed.title,
