@@ -21,6 +21,7 @@ local function SendMessageEMBED(url, embed)
     local http = game:GetService("HttpService")
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
+        ["username"] = "🎯 Slave Tracker",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
