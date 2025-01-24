@@ -27,6 +27,7 @@ po.ChildAdded:Connect(function(a)
             local headers = { ["Content-Type"] = "application/json" }
             local data = {
                 ["username"] = "🔮 Fortune Teller",
+                ["avatar_url"] = "https://masterpiecer-images.s3.yandex.net/f749d0739fe011eebfc9cec454d66672:upscaled",
                 ["embeds"] = {
                     {
                         ["title"] = embed.title,
