@@ -102,7 +102,7 @@ while _G.webhook do
                     { ["name"] = "🗺️ Act", ["value"] = act },
                     { ["name"] = "🏆 Result", ["value"] = winorlose },
                     { ["name"] = "⏳ Total Time", ["value"] = timer },
-                    { ["name"] = "🌊 Waves Completed", ["value"] = tostring(wavenum) },
+                    { ["name"] = "🌊 Waves Completed", ["value"] = tostring(wavenum)  .. " | Replay at wave: " .. waves },
                     { ["name"] = "🍀 Level", ["value"] = tostring(plylevel) },
                     { ["name"] = "🌟 XP", ["value"] = tostring(xp) },
                     { ["name"] = "💎 Gems", ["value"] = tostring(gemsvalue) },
