@@ -10,7 +10,7 @@ local url = _G.playeruptimewebhook
 local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
-        ["username"] = "User Tracker",
+        ["username"] = "📹 Wireless CCTV Camera",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
