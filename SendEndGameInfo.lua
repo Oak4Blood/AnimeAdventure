@@ -14,6 +14,7 @@ local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
         ["username"] = "🧐 Nosey Guy",
+        ["avatar_url"] = "https://www.collinsdictionary.com/images/full/bush_132902558.jpg",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
