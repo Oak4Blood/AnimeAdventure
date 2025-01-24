@@ -99,7 +99,7 @@ while _G.autounit do
                 ["fields"] = {
                     {
                         ["name"] = "🗂️ Unit 1 Placed",
-                        ["value"] = _G.unit_id
+                        ["value"] = "||".._G.unit_id.."||"
                     }
                 },
                 ["footer"] = {
@@ -141,7 +141,7 @@ while _G.autounit do
                 ["fields"] = {
                     {
                         ["name"] = "🗂️ Unit 2 Placed",
-                        ["value"] = _G.unit_id
+                        ["value"] = "||".._G.unit_id.."||"
                     }
                 },
                 ["footer"] = {
@@ -183,7 +183,7 @@ while _G.autounit do
                     ["fields"] = {
                         {
                             ["name"] = "🗂️ Unit 3 Placed",
-                            ["value"] = _G.unit_id
+                            ["value"] = "||".._G.unit_id.."||"
                         }
                     },
                     ["footer"] = {
@@ -225,7 +225,7 @@ while _G.autounit do
                     ["fields"] = {
                         {
                             ["name"] = "🗂️ Unit 4 Placed",
-                            ["value"] = _G.unit_id
+                            ["value"] = "||".._G.unit_id.."||"
                         }
                     },
                     ["footer"] = {
@@ -269,7 +269,7 @@ while _G.autounit do
                     ["fields"] = {
                         {
                             ["name"] = "🗂️ Unit 5 Placed",
-                            ["value"] = _G.unit_id
+                            ["value"] = "||".._G.unit_id.."||"
                         }
                     },
                     ["footer"] = {
@@ -280,7 +280,7 @@ while _G.autounit do
                 sentUnits["unit5"] = true
             end
             --------------------------------------------------------------------------------------
-            if wavenum == 10 then
+            if wavenum == 15 then
                 _G.autounit = false
         end
     end
