@@ -3,8 +3,15 @@ wait(2)
 repeat wait() until game:IsLoaded()
 _G.dropget = true
 local alldrops = {}
-local dropSummary = {}
 local gameFinishedNotified = false
+
+local function countDrops(drops)
+    local dropCounts = {}
+    for _, drop in ipairs(drops) do
+        dropCounts[drop] = (dropCounts[drop] or 0) + 1
+    end
+    return dropCounts
+end
 
 while _G.dropget do
     wait()
@@ -56,17 +63,20 @@ while _G.dropget do
     if workspace:FindFirstChild("_waves_started") and workspace._DATA.GameFinished.Value == true and not gameFinishedNotified then
         wait(1)
         gameFinishedNotified = true
-        for _, item in pairs(alldrops) do
-            table.insert(dropSummary, item)
+
+        local dropCounts = countDrops(alldrops)
+        local dropSummary = {}
+        for item, count in pairs(dropCounts) do
+            table.insert(dropSummary, item .. " : " .. count .. "x")
         end
 
         local embed = {
-            ["title"] = game.Players.LocalPlayer.Character.Name,
+            ["title"] = "||"..game.Players.LocalPlayer.Character.Name.."||",
             ["color"] = color,
             ["fields"] = {
                 { ["name"] = "Drop Obtained", ["value"] = table.concat(dropSummary, "\n") }
             },
-            ["footer"] = { ["text"] = getFormattedDateTime()}
+            ["footer"] = { ["text"] = getFormattedDateTime() }
         }
         SendMessageEMBED(_G.webhook_url, embed)
     end
