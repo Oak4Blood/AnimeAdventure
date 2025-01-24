@@ -335,7 +335,7 @@ end
 local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
-        ["username"] = "คนดูช่องเก็บของที่จริงใจ 🗿",
+        ["username"] = "👮 Police",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
