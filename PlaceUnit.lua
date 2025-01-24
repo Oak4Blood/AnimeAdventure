@@ -22,6 +22,7 @@ local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
         ["username"] = "🎯 Slave Tracker",
+        ["avatar_url"] = "https://imagedelivery.net/LBWXYQ-XnKSYxbZ-NuYGqQ/43ff6df7-933b-4cfd-4aee-c8bf0d7b3700/avatarhd",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
