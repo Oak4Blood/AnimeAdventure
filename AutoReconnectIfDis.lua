@@ -55,7 +55,7 @@ po.ChildAdded:Connect(function(a)
         local timestamp = string.format("%02i:%02i %s", ((hour - 1) % 12) + 1, date.min, ampm)
         local url = _G.webhook_url
 
-        SendMessage(url, "Disconnected")
+        SendMessage(url, "")
 
         local embed = {
             ["title"] = plyname,
