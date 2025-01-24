@@ -20,6 +20,7 @@ local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
         ["username"] = "📹 Wireless CCTV Camera",
+        ["avatar_url"] = "https://4.imimg.com/data4/WT/XE/MY-34431755/wireless-cctv-camera.jpg",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
