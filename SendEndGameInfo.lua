@@ -13,7 +13,7 @@ local url = _G.webhook_url
 local function SendMessageEMBED(url, embed)
     local headers = { ["Content-Type"] = "application/json" }
     local data = {
-        ["username"] = "Grilled Seaweed",
+        ["username"] = "🧐 Nosey Guy",
         ["embeds"] = {
             {
                 ["title"] = embed.title,
