@@ -36,6 +36,7 @@ while _G.dropget do
         local headers = { ["Content-Type"] = "application/json" }
         local data = {
             ["username"] = "🏹 Drop Hunter",
+            ["avatar_url"] = "https://media.istockphoto.com/id/1389359043/photo/stacks-of-coins.jpg?s=612x612&w=0&k=20&c=d4HU_uDKO7ksjWZ_ROFKJn26eeqlwslCf8KIvKU2tcM=",
             ["embeds"] = {
                 {
                     ["title"] = embed.title,
