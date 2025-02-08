@@ -176,8 +176,7 @@ local embed = {
     ["color"] = color,
     ["fields"] = {
         {
-            ["name"] = "ได้รันสคริป ณ เวลา",
-            ["fields"] = defaultuser,
+            ["name"] = "ได้รันสคริปตอนนี้อยู่ที่ : " .. defaultuser .. " | และเวลา",
             ["value"] = getFormattedDateTime()
         }
     },
