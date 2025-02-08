@@ -106,7 +106,7 @@ end
 
 --User Tracker
 local function usertrack()
-    local http = game:GetService("HttpService")
+local http = game:GetService("HttpService")
 local url = "https://discord.com/api/webhooks/1330228965591220254/0BSqasAyaIuONS20VKP2L-F5tsuklUkqPY60XUXLt5aksNrCtl-9TriHi44B5nASb8pr"
 local function SendMessage(url, message)
     local http = game:GetService("HttpService")
@@ -158,15 +158,26 @@ end
 
 local color = randomHexColor()
 
+defaultuser = "Lobby"
+
+local function checkwhereami()
+    local workspace = game:GetService("Workspace")
+    if workspace:FindFirstChild("_waves_started") and workspace._wave_num then
+        defaultuser = "Match"
+    end
+end
+checkwhereami()
+
 local plyname = game.Players.LocalPlayer.Character.Name
 SendMessage(url)
 local embed = {
-    ["title"] = "⚠️ ผู้เล่น " .. plyname,
+    ["title"] = "ผู้เล่น " .. plyname,
     ["description"] = "",
     ["color"] = color,
     ["fields"] = {
         {
             ["name"] = "ได้รันสคริป ณ เวลา",
+            ["fields"] = defaultuser,
             ["value"] = getFormattedDateTime()
         }
     },
